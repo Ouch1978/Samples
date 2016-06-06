@@ -1,0 +1,75 @@
+﻿<Page x:Class="Wpf_ShowEmptyMessageInDataGrid.Page1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Wpf_ShowEmptyMessageInDataGrid" mc:Ignorable="d"
+        d:DesignHeight="600" d:DesignWidth="800" Width="Auto" Height="Auto" Title="Page1"
+        Name="TestPage" ShowsNavigationUI="True"
+        DataContext="{Binding Source={StaticResource SampleDataSource}}">
+    <Border BorderThickness="2" CornerRadius="10" Margin="10" Background="White"
+            BorderBrush="#FF646464">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap"
+                    Text="WPF Empty Data Message 範例" VerticalAlignment="Center"
+                    FontSize="26.667" FontWeight="Bold" Foreground="#FF646464" />
+            <Rectangle Fill="#FF646464" Height="2" Margin="10,0" VerticalAlignment="Bottom" />
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="沒處理過的DataGrid"
+                    VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Grid.Row="1"
+                    Margin="10,5,0,0" Opacity="0.75" FontStyle="Italic" Foreground="#FF646464" />
+            <DataGrid Grid.Row="1" Margin="10,50,10,10" AutoGenerateColumns="False"
+                    ItemsSource="{Binding Collection}" FontSize="14.667">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="編號" />
+                    <DataGridTextColumn Binding="{Binding Name}" Header="姓名" />
+                    <DataGridTextColumn Binding="{Binding Phone}" Header="電話" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Line x:Name="Line1" X1="0" Y1="0" X2="800" Y2="0" Stroke="#FF646464"
+                    StrokeDashArray="4 2" Grid.Row="2" Margin="10,0" VerticalAlignment="Top"
+                    Height="2" StrokeThickness="2" />
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="經過加工的DataGrid"
+                    VerticalAlignment="Top" FontSize="32" FontWeight="Bold" Grid.Row="2"
+                    Margin="10,5,0,0" Opacity="0.75" FontStyle="Italic" Foreground="#FF646464" />
+            <DataGrid Grid.Row="2" Margin="10,50,10,10" AutoGenerateColumns="False"
+                    ItemsSource="{Binding Collection}" FontSize="14.667" Name="grdSample2">
+                <DataGrid.Style>
+                    <Style TargetType="DataGrid">
+                        <Setter Property="RowDetailsVisibilityMode" Value="Collapsed"></Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding DataContext.Collection.Count, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,
+                                    AncestorType={x:Type local:Page1}}}" Value="0">
+                                
+                                <Setter Property="RowHeight" Value="0"></Setter>
+                                <Setter Property="RowDetailsVisibilityMode" Value="Visible"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Style>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <TextBlock Text="查無資料" VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="編號" />
+                    <DataGridTextColumn Binding="{Binding Name}" Header="姓名" />
+                    <DataGridTextColumn Binding="{Binding Phone}" Header="電話" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnDeleteLastRecord" Content="刪除末筆" HorizontalAlignment="Center"
+                    Grid.Row="3" VerticalAlignment="Center" Margin="0,5" Padding="10,5"
+                    FontSize="14.667" FontWeight="Bold" Click="btnDeleteLastRecord_Click" />
+        </Grid>
+    </Border>
+</Page>

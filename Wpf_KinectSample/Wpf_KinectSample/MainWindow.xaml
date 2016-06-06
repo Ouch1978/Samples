@@ -1,0 +1,44 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="Wpf_KinectSample.MainWindow" mc:Ignorable="d" d:DesignWidth="800"
+        d:DesignHeight="600" Title="MainWindow" Height="Auto" Width="Auto">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.913*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image x:Name="imgVideoFrame" Grid.Row="0" Grid.Column="0" Margin="10" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Margin="0,10">
+            <Button x:Name="btnStart" Content="開始擷取" Margin="10,0" Padding="10,1" VerticalAlignment="Center"
+                    FontSize="16" Click="btnStart_Click" Visibility="Collapsed" >
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ei:ChangePropertyAction PropertyName="Visibility">
+            				<ei:ChangePropertyAction.Value>
+            					<Visibility>Collapsed</Visibility>
+            				</ei:ChangePropertyAction.Value>
+            			</ei:ChangePropertyAction>
+            			<ei:ChangePropertyAction TargetObject="{Binding ElementName=btnStop}" PropertyName="Visibility"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
+            </Button>
+            <Button x:Name="btnStop" Content="停止擷取" Margin="10,0" Padding="10,1" VerticalAlignment="Center"
+                    FontSize="16" Click="btnStop_Click" >
+            	<i:Interaction.Triggers>
+            		<i:EventTrigger EventName="Click">
+            			<ei:ChangePropertyAction PropertyName="Visibility">
+            				<ei:ChangePropertyAction.Value>
+            					<Visibility>Collapsed</Visibility>
+            				</ei:ChangePropertyAction.Value>
+            			</ei:ChangePropertyAction>
+            			<ei:ChangePropertyAction TargetObject="{Binding ElementName=btnStart}" PropertyName="Visibility"/>
+            		</i:EventTrigger>
+            	</i:Interaction.Triggers>
+            </Button>
+            <Button x:Name="btnSavePicture" Content="儲存圖片" Margin="10,0" Padding="10,1" VerticalAlignment="Center"
+                    FontSize="16" Click="btnSavePicture_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

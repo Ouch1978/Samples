@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SilverlightPinControlSite", "SilverlightPinControlSite\", "{0a3cf97c-997a-485d-bb1c-e5d10ed7b507}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjOutputReferences = "{48e0125c-f100-45bc-89ee-19822dc26beb}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightPinControl", "SilverlightPinControl\SilverlightPinControl.csproj", "{48e0125c-f100-45bc-89ee-19822dc26beb}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A3CF97C-997A-485D-BB1C-E5D10ED7B507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3CF97C-997A-485D-BB1C-E5D10ED7B507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3CF97C-997A-485D-BB1C-E5D10ED7B507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3CF97C-997A-485D-BB1C-E5D10ED7B507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E0125C-F100-45BC-89EE-19822DC26BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E0125C-F100-45BC-89EE-19822DC26BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E0125C-F100-45BC-89EE-19822DC26BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E0125C-F100-45BC-89EE-19822DC26BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

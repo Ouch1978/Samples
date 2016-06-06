@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Sl-GridLengthAnimationSite", "Sl-GridLengthAnimationSite\", "{75286A16-38BC-4317-A679-E8ABD18C1CE7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Sl-GridLengthAnimationSite"
+		Debug.AspNetCompiler.PhysicalPath = "Sl-GridLengthAnimationSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Sl-GridLengthAnimationSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Sl-GridLengthAnimationSite"
+		Release.AspNetCompiler.PhysicalPath = "Sl-GridLengthAnimationSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Sl-GridLengthAnimationSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "31271"
+		ProjOutputReferences = "{13acb96e-03d5-40e6-9304-c31bc539ee64}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sl-GridLengthAnimation", "Sl-GridLengthAnimation\Sl-GridLengthAnimation.csproj", "{13ACB96E-03D5-40E6-9304-C31BC539EE64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75286A16-38BC-4317-A679-E8ABD18C1CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75286A16-38BC-4317-A679-E8ABD18C1CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75286A16-38BC-4317-A679-E8ABD18C1CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75286A16-38BC-4317-A679-E8ABD18C1CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13ACB96E-03D5-40E6-9304-C31BC539EE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13ACB96E-03D5-40E6-9304-C31BC539EE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13ACB96E-03D5-40E6-9304-C31BC539EE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13ACB96E-03D5-40E6-9304-C31BC539EE64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

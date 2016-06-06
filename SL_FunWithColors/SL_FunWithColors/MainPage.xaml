@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="SL_FunWithColors.MainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:theme="clr-namespace:System.Windows.Controls.Theming;assembly=System.Windows.Controls.Theming.ExpressionDark"
+        mc:Ignorable="d" Width="Auto" Height="Auto" d:DesignWidth="800" d:DesignHeight="600">
+
+    <theme:ExpressionDarkTheme>
+        <Border BorderThickness="2" CornerRadius="10" BorderBrush="#FF646464" Background="White">
+            <Border.Effect>
+                <DropShadowEffect />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.379*" />
+                    <ColumnDefinition Width="0.252*" />
+                    <ColumnDefinition Width="0.369*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="0.33*" />
+                    <RowDefinition Height="0.33*" />
+                    <RowDefinition Height="0.33*"/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Silverlight自訂ColorConverter範例"
+                        VerticalAlignment="Center" FontSize="24" FontWeight="Bold"
+                        Foreground="#FF646464" Grid.ColumnSpan="3" />
+                <Rectangle Fill="#FF646464" Height="2" VerticalAlignment="Bottom" Margin="10,0"
+                        Grid.ColumnSpan="3" />
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0"
+                        Grid.Row="1" FontSize="18.667" FontWeight="Bold" Foreground="#FF646464"
+                        Text="不使用任何Converter" d:LayoutOverrides="Width" Grid.ColumnSpan="3" />
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0"
+                        Grid.Row="2" FontSize="18.667" FontWeight="Bold" Foreground="#FF646464"
+                        d:LayoutOverrides="Width" Grid.ColumnSpan="3"><Run Text="使用" /><Run
+                            Text="自訂的" /><Run Text="ColorConverter" /></TextBlock>
+                <Grid Margin="25,0,20,20" Grid.Row="1" VerticalAlignment="Bottom" Height="69">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*" />
+                        <RowDefinition Height=".5*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*" />
+                        <ColumnDefinition Width="0.25*" />
+                        <ColumnDefinition Width="0.25*" />
+                        <ColumnDefinition Width="0.25*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextWrapping="Wrap" Text="Alpha" FontWeight="Bold" FontSize="16"
+                            Foreground="#FF646464" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    <TextBlock TextWrapping="Wrap" Text="Red" FontWeight="Bold" FontSize="16"
+                            Foreground="#FF646464" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Grid.Column="1" />
+                    <TextBlock TextWrapping="Wrap" Text="Green" FontWeight="Bold" FontSize="16"
+                            Foreground="#FF646464" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Grid.Column="2" />
+                    <TextBlock TextWrapping="Wrap" Text="Blue" FontWeight="Bold" FontSize="16"
+                            Foreground="#FF646464" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" Grid.Column="3" />
+                    <TextBox x:Name="txtColor1_Alpha" TextWrapping="Wrap" FontSize="16" Text="FF"
+                            Grid.Row="1" Margin="3,0" />
+                    <TextBox x:Name="txtColor1_Red" TextWrapping="Wrap" FontSize="16" Text="00"
+                            Grid.Column="1" Margin="3,0" Grid.Row="1" />
+                    <TextBox x:Name="txtColor1_Green" TextWrapping="Wrap" FontSize="16" Text="00"
+                            Grid.Column="2" Margin="3,0" Grid.Row="1" />
+                    <TextBox x:Name="txtColor1_Blue" TextWrapping="Wrap" FontSize="16" Text="00"
+                            Grid.Column="3" Margin="3,0" Grid.Row="1" />
+                </Grid>
+                <StackPanel Orientation="Vertical" Grid.Row="3"
+                        Margin="30,0,20,20" d:LayoutOverrides="Height" VerticalAlignment="Bottom">
+                    <TextBlock TextWrapping="Wrap" Text="色碼或色票名稱" VerticalAlignment="Center"
+                            HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"
+                            Foreground="#FF646464" Margin="0,0,0,5" />
+                    <TextBox x:Name="txtColor3" TextWrapping="Wrap" VerticalAlignment="Center"
+                            Height="32" FontSize="16" Text="#FFFFFFFF" />
+                </StackPanel>
+                <Rectangle x:Name="recColor1" Fill="Black" Grid.Row="1" Stroke="Black"
+                        Margin="20,30,20,10" RadiusX="10" StrokeThickness="3" RadiusY="10"
+                        Grid.Column="2" />
+                <Rectangle x:Name="recColor2" Fill="Red" Grid.Row="2" Stroke="Black"
+                        Margin="20,30,20,10" RadiusX="10" StrokeThickness="3" RadiusY="10"
+                        Grid.Column="2" />
+                <Rectangle Fill="#FF646464" Height="2" VerticalAlignment="Bottom" Margin="10,0"
+                        Grid.Row="1" Grid.ColumnSpan="3" />
+                <Button x:Name="btnApplyColor1" Content="套用顏色 -&gt;" HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom" Grid.Row="1" Width="120" Height="32"
+                        FontWeight="Bold" FontSize="14.667" Click="btnApplyColor1_Click"
+                        Grid.Column="1" Margin="0,0,0,30" />
+                <Button x:Name="btnApplyColor2" Content="套用顏色 -&gt;" HorizontalAlignment="Center" Grid.Row="2" Width="120"
+                        FontWeight="Bold" FontSize="14.667" Click="btnApplyColor2_Click"
+                        Grid.Column="1" Margin="0,0,0,30" Height="32" VerticalAlignment="Bottom" />
+                <Rectangle Fill="#FF646464" Height="2" VerticalAlignment="Bottom" Margin="10,0"
+                	Grid.Row="2" Grid.ColumnSpan="3" />
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0"
+                	Grid.Row="3" FontSize="18.667" FontWeight="Bold" Foreground="#FF646464"
+                	Grid.ColumnSpan="3" d:LayoutOverrides="Width" Text="使用自訂的XamlColorConverter"/>
+                <Button x:Name="btnApplyColor3" Content="套用顏色 -&gt;" HorizontalAlignment="Center" Grid.Row="3" Width="120"
+                	FontWeight="Bold" FontSize="14.667" Grid.Column="1" Margin="0,0,0,30" Height="32" VerticalAlignment="Bottom"
+                        Click="btnApplyColor3_Click" />
+                <Rectangle x:Name="recColor3" Fill="White" Grid.Row="3" Stroke="Black"
+                	Margin="20,30,20,10" RadiusX="10" StrokeThickness="3" RadiusY="10"
+                	Grid.Column="2" />
+                <StackPanel Orientation="Vertical" Grid.Row="2"
+                	Margin="30,0,20,20" VerticalAlignment="Bottom">
+                	<TextBlock TextWrapping="Wrap" Text="色碼或色票名稱" VerticalAlignment="Center"
+                		HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"
+                		Foreground="#FF646464" Margin="0,0,0,5" />
+                	<TextBox x:Name="txtColor2" TextWrapping="Wrap" VerticalAlignment="Center"
+                		Height="32" FontSize="16" Text="#FFFF0000" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </theme:ExpressionDarkTheme>
+
+</UserControl>

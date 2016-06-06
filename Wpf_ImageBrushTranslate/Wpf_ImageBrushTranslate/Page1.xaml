@@ -1,0 +1,89 @@
+﻿<Page x:Class="Wpf_ImageBrushTranslate.Page1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="640" Width="Auto"
+        Height="Auto" Title="Page1">
+    <Border CornerRadius="10" BorderBrush="#FF323232" BorderThickness="2">
+
+        <Grid x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="111" />
+            </Grid.RowDefinitions>
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.103*" />
+                    <RowDefinition Height="0.897*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="預設的Transform" d:LayoutOverrides="Height" VerticalAlignment="Center"
+                        FontSize="18.667" />
+                <WrapPanel Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+                    <Ellipse Height="250" Stroke="Black" Width="250" Margin="10">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="PicOfWeek.jpg" Stretch="UniformToFill">
+                                <ImageBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="{Binding Value, ElementName=sldScale}"
+                                                ScaleY="{Binding Value, ElementName=sldScale}" />
+                                        <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                        <RotateTransform CenterX="0.5" CenterY="0.5" Angle="{Binding Value, ElementName=sldRotate}" />
+                                        <TranslateTransform X="{Binding Value, ElementName=sldTranslate}"
+                                                Y="{Binding Value, ElementName=sldTranslate}" />
+                                    </TransformGroup>
+                                </ImageBrush.RelativeTransform>
+                            </ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </WrapPanel>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="修改過的Transform" VerticalAlignment="Center"
+                        FontSize="18.667" />
+                <WrapPanel Grid.Column="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+                    <Ellipse Height="250" Stroke="Black" Width="250" Margin="10">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="PicOfWeek.jpg" Stretch="UniformToFill">
+                                <ImageBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="{Binding Value, ElementName=sldScale}" ScaleX="{Binding Value, ElementName=sldScale}"
+                                                CenterX="0.5" CenterY="0.5" />
+                                        <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                        <RotateTransform Angle="{Binding Value, ElementName=sldRotate}" CenterX="0.5" CenterY="0.5" />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </ImageBrush.RelativeTransform>
+                                <ImageBrush.Transform>
+                                    <TranslateTransform x:Name="translate1" X="{Binding Value, ElementName=sldTranslate}"
+                                            Y="{Binding Value, ElementName=sldTranslate}" />
+                                </ImageBrush.Transform>
+                            </ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </WrapPanel>
+            </Grid>
+            <StackPanel Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <TextBlock TextWrapping="Wrap" Text="ScaleTransform" VerticalAlignment="Center" Width="120" TextAlignment="Right" />
+                    <Slider x:Name="sldScale" Width="300" Margin="10,0,0,0" SmallChange="1" Value="1" Minimum="1" TickPlacement="BottomRight"
+                            Maximum="5" IsSnapToTickEnabled="True" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Width="40" TextAlignment="Right"
+                            Text="{Binding Value, ElementName=sldScale}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <TextBlock TextWrapping="Wrap" Text="RotateTransform" VerticalAlignment="Center" Width="120" TextAlignment="Right" />
+                    <Slider x:Name="sldRotate" Width="300" Margin="10,0,0,0" Maximum="360" SmallChange="1" IsSnapToTickEnabled="True" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Width="40" TextAlignment="Right"
+                            Text="{Binding Value, ElementName=sldRotate}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <TextBlock TextWrapping="Wrap" Text="TranslateTransform" VerticalAlignment="Center" Width="120" TextAlignment="Right" />
+                    <Slider x:Name="sldTranslate" Width="300" Margin="10,0,0,0" Maximum="50" SmallChange="1" TickPlacement="BottomRight"
+                            IsSnapToTickEnabled="True" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Width="40" TextAlignment="Right"
+                            Text="{Binding Value, ElementName=sldTranslate}" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

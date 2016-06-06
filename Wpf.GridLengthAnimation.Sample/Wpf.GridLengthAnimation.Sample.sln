@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.GridLengthAnimation.Sample", "Wpf.GridLengthAnimation.Sample\Wpf.GridLengthAnimation.Sample.csproj", "{420B6A06-EAF2-4D52-8393-6EA937B87E83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{420B6A06-EAF2-4D52-8393-6EA937B87E83}.Debug|x86.ActiveCfg = Debug|x86
+		{420B6A06-EAF2-4D52-8393-6EA937B87E83}.Debug|x86.Build.0 = Debug|x86
+		{420B6A06-EAF2-4D52-8393-6EA937B87E83}.Release|x86.ActiveCfg = Release|x86
+		{420B6A06-EAF2-4D52-8393-6EA937B87E83}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

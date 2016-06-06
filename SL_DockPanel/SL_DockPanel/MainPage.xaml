@@ -1,0 +1,52 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="SL_DockPanel.MainPage"
+    mc:Ignorable="d"
+    d:DesignWidth="800" d:DesignHeight="600"
+    Width="Auto" Height="Auto">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="LeftPanelStateGroup">
+    			<VisualStateGroup.Transitions>
+    				<VisualTransition GeneratedDuration="0:0:1">
+    					<VisualTransition.GeneratedEasingFunction>
+    						<BounceEase EasingMode="EaseOut"/>
+    					</VisualTransition.GeneratedEasingFunction>
+    				</VisualTransition>
+    			</VisualStateGroup.Transitions>
+    			<VisualState x:Name="ShowLeftPanel">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="HideLeftPanel">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="-160" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+    	<Border x:Name="border" BorderBrush="#FF5C5C5C" BorderThickness="0,3,3,3" HorizontalAlignment="Left" Width="200" Background="White" CornerRadius="0,10,10,0" Margin="0,10" RenderTransformOrigin="0.5,0.5">
+    		<Border.RenderTransform>
+    			<CompositeTransform/>
+    		</Border.RenderTransform>
+    		<StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0">
+    			<TextBlock TextWrapping="Wrap" Text="LeftPanel" FontFamily="Arial Black" FontSize="16" Foreground="#FF707070" Margin="0,0,10,0"/>
+    			<CheckBox Content="CheckBox" Style="{StaticResource PinStyle}" IsChecked="True">
+    				<i:Interaction.Triggers>
+    					<i:EventTrigger EventName="Unchecked">
+    						<ei:GoToStateAction StateName="HideLeftPanel"/>
+    					</i:EventTrigger>
+    					<i:EventTrigger EventName="Checked">
+    						<ei:GoToStateAction StateName="ShowLeftPanel"/>
+    					</i:EventTrigger>
+    				</i:Interaction.Triggers>
+    			</CheckBox>
+    		</StackPanel>
+    	</Border>
+    </Grid>
+</UserControl>

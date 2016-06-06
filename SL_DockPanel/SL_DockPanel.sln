@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SL_DockPanelSite", "SL_DockPanelSite\", "{dd75e0de-9ef7-4b83-a17a-42d0cd559273}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjOutputReferences = "{1eeaafd6-b105-452b-8095-2e15aaee45dd}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_DockPanel", "SL_DockPanel\SL_DockPanel.csproj", "{1eeaafd6-b105-452b-8095-2e15aaee45dd}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD75E0DE-9EF7-4B83-A17A-42D0CD559273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD75E0DE-9EF7-4B83-A17A-42D0CD559273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD75E0DE-9EF7-4B83-A17A-42D0CD559273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD75E0DE-9EF7-4B83-A17A-42D0CD559273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EEAAFD6-B105-452B-8095-2E15AAEE45DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEAAFD6-B105-452B-8095-2E15AAEE45DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEAAFD6-B105-452B-8095-2E15AAEE45DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEAAFD6-B105-452B-8095-2E15AAEE45DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

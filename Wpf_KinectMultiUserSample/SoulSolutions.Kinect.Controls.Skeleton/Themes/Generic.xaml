@@ -1,0 +1,146 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+    xmlns:Skeleton="clr-namespace:SoulSolutions.Kinect.Controls.Skeleton">
+    <Style TargetType="{x:Type Skeleton:SkeletonControl}">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BoneFill" Value="LightGray" />
+        <Setter Property="Width" Value="640" />
+        <Setter Property="Height" Value="480" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Skeleton:SkeletonControl}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Canvas Name="MainCanvas" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" >
+                            <Rectangle x:Name="NeckBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0">
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ShoulderCenter" StartJointElementName="PART_Head"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="Spine" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0">
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ShoulderCenter" StartJointElementName="PART_Spine"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LowerSpine" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0">
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_HipCenter" StartJointElementName="PART_Spine"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LCollarBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ShoulderCenter" StartJointElementName="PART_ShoulderLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RCollarBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ShoulderCenter" StartJointElementName="PART_ShoulderRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RUpperArmBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ElbowRight" StartJointElementName="PART_ShoulderRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LUpperArmBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ElbowLeft" StartJointElementName="PART_ShoulderLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RLowerArmBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ElbowRight" StartJointElementName="PART_WristRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LLowerArmBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_ElbowLeft" StartJointElementName="PART_WristLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RHandBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_HandRight" StartJointElementName="PART_WristRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LHandBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_HandLeft" StartJointElementName="PART_WristLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LHipBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_HipCenter" StartJointElementName="PART_HipLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RHipBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_HipCenter" StartJointElementName="PART_HipRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RUpperLegBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_KneeRight" StartJointElementName="PART_HipRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LUpperLegBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_KneeLeft" StartJointElementName="PART_HipLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RLowerLegBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_KneeRight" StartJointElementName="PART_AnkleRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LLowerLegBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_KneeLeft" StartJointElementName="PART_AnkleLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="RFootBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_FootRight" StartJointElementName="PART_AnkleRight"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Rectangle x:Name="LFootBone" Fill="{TemplateBinding BoneFill}" Height="4" Width="10" StrokeThickness="0" >
+                                <i:Interaction.Behaviors>
+                                    <Skeleton:BoneBehavior EndJointElementName="PART_FootLeft" StartJointElementName="PART_AnkleLeft"/>
+                                </i:Interaction.Behaviors>
+                            </Rectangle>
+                            <Ellipse x:Name="PART_Head" Fill="{TemplateBinding Foreground}" Height="40" Canvas.Left="90" Width="40"/>
+                            <Ellipse x:Name="PART_HandLeft" Fill="{TemplateBinding Foreground}" Height="20" Canvas.Top="150" Width="20"/>
+                            <Ellipse x:Name="PART_HandRight" Fill="{TemplateBinding Foreground}" Height="20" Canvas.Left="195" Canvas.Top="150" Width="20"/>
+                            <Ellipse x:Name="PART_HipCenter" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="105" Canvas.Top="155" Width="10"/>
+                            <Ellipse x:Name="PART_FootRight" Fill="{TemplateBinding Foreground}" Height="20" Canvas.Left="140" Canvas.Top="275" Width="20"/>
+                            <Ellipse x:Name="PART_FootLeft" Fill="{TemplateBinding Foreground}" Height="20" Canvas.Left="65" Canvas.Top="275" Width="20"/>
+                            <Ellipse x:Name="PART_AnkleLeft" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="75" Canvas.Top="255" Width="10"/>
+                            <Ellipse x:Name="PART_AnkleRight" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="135" Canvas.Top="255" Width="10"/>
+                            <Ellipse x:Name="PART_ElbowLeft" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="40" Canvas.Top="100" Width="10"/>
+                            <Ellipse x:Name="PART_ElbowRight" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="165" Canvas.Top="100" Width="10"/>
+                            <Ellipse x:Name="PART_HipLeft" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="75" Canvas.Top="170" Width="10"/>
+                            <Ellipse x:Name="PART_HipRight" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="135" Canvas.Top="170" Width="10"/>
+                            <Ellipse x:Name="PART_KneeLeft" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="75" Canvas.Top="215" Width="10"/>
+                            <Ellipse x:Name="PART_KneeRight" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="135" Canvas.Top="215" Width="10"/>
+                            <Ellipse x:Name="PART_ShoulderCenter" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="105" Canvas.Top="55" Width="10"/>
+                            <Ellipse x:Name="PART_ShoulderLeft" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="70" Canvas.Top="65" Width="10"/>
+                            <Ellipse x:Name="PART_ShoulderRight" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="140" Canvas.Top="65" Width="10"/>
+                            <Ellipse x:Name="PART_Spine" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="105" Canvas.Top="130" Width="10"/>
+                            <Ellipse x:Name="PART_WristLeft" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="20" Canvas.Top="135" Width="10"/>
+                            <Ellipse x:Name="PART_WristRight" Fill="{TemplateBinding Foreground}" Height="10" Canvas.Left="185" Canvas.Top="135" Width="10"/>
+                        </Canvas>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

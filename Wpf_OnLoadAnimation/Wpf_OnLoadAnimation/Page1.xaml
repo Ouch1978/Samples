@@ -1,0 +1,25 @@
+﻿<Page x:Class="Wpf_OnLoadAnimation.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Title="Page1"
+      d:DesignWidth="800" d:DesignHeight="600"
+      Width="Auto" Height="Auto">
+    <Border BorderThickness="2" CornerRadius="10" BorderBrush="#FF646464" Margin="10">
+		<Grid x:Name="LayoutRoot">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="50" />
+			</Grid.RowDefinitions>
+			<StackPanel Orientation="Horizontal" Grid.Row="1" d:LayoutOverrides="Height" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+				<Button Content="Add Control" HorizontalAlignment="Center"
+					x:Name="btnAddGrid" VerticalAlignment="Center" Click="btnAddGrid_Click" Padding="5" Width="130" />
+				<Button Content="Remove Control" HorizontalAlignment="Center"
+					x:Name="btnRemoveLast" VerticalAlignment="Center" Margin="10,0,0,0" Padding="5" Width="130" Click="btnRemoveLast_Click" />
+			</StackPanel>
+			<WrapPanel x:Name="wrpPanel" Margin="10,10,10,10" />
+		</Grid>
+	</Border>
+</Page>

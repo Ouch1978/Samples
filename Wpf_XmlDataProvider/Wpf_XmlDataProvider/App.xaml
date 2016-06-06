@@ -1,0 +1,10 @@
+﻿<Application x:Class="Wpf_XmlDataProvider.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+		<ResourceDictionary>
+			<XmlDataProvider x:Key="xmlLanguageProvider" Source="Cultures/Language.xml" XPath="LangSettings" />
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

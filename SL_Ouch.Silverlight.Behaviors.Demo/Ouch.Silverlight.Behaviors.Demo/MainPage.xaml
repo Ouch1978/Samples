@@ -1,0 +1,32 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Ouch.Silverlight.Behaviors.Demo.MainPage"
+    mc:Ignorable="d"
+    d:DesignWidth="800" d:DesignHeight="600">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="50"/>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ouch.Silverlight.Behaviors Demo" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="16" Margin="10,0,0,0"/>
+
+    	<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+    		<HyperlinkButton Content="HyperlinkButton" Margin="5,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF73A9D8" BorderThickness="2" BorderBrush="#FF1F75C0" Foreground="White" FontSize="13.333" IsEnabled="False"/>
+    		<HyperlinkButton Content="HyperlinkButton" Margin="5,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF73A9D8" BorderThickness="2" BorderBrush="#FF1F75C0" Foreground="White" FontSize="13.333" IsEnabled="False"/>
+    		<HyperlinkButton Content="HyperlinkButton" Margin="5,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF73A9D8" BorderThickness="2" BorderBrush="#FF1F75C0" Foreground="White" FontSize="13.333" IsEnabled="False"/>
+    		<HyperlinkButton Content="MagnifierBehavior" Margin="5,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF73A9D8" BorderThickness="2" BorderBrush="#FF1F75C0" Foreground="White" FontSize="13.333" TargetName="frame" NavigateUri="/Pages/MagnifierBehaviorDemo.xaml"/>
+    	</StackPanel>
+    	<Border Grid.Row="1" CornerRadius="10" Padding="5" BorderBrush="Black" BorderThickness="3" Background="White" Margin="10">
+    		<Border.Effect>
+    			<DropShadowEffect Opacity="0.25"/>
+    		</Border.Effect>
+            <sdk:Frame x:Name="frame" Source="/Pages/MagnifierBehaviorDemo.xaml" />
+
+    	</Border>
+
+    </Grid>
+</UserControl>

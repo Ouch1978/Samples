@@ -1,0 +1,39 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:theme="clr-namespace:System.Windows.Controls.Theming;assembly=System.Windows.Controls.Theming.ExpressionDark"
+		xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" x:Class="SL_RandomWithLinq.MainPage"
+		mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="800">
+	<theme:ExpressionDarkTheme Background="{x:Null}" Foreground="#FF646464">
+		<Border BorderThickness="2" CornerRadius="10" Margin="10" Background="White" BorderBrush="#FF646464">
+			<Border.Effect>
+				<DropShadowEffect />
+			</Border.Effect>
+			<Grid x:Name="LayoutRoot" Background="Transparent">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="40" />
+					<RowDefinition />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Silverlight 透過Linq取亂數範例"
+						VerticalAlignment="Center" FontSize="26.667" FontWeight="Bold" />
+				<Rectangle Fill="#FF646464" Height="2" Margin="10,0" VerticalAlignment="Bottom" />
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="第 00000 期大樂透得獎號碼" VerticalAlignment="Top"
+						FontSize="32" FontWeight="Bold" Grid.Row="1" Margin="10,10,0,0" FontStyle="Italic" Foreground="#FFFFC700" >
+					<TextBlock.Effect>
+						<DropShadowEffect ShadowDepth="1"/>
+					</TextBlock.Effect>
+				</TextBlock>
+				<toolkit:WrapPanel x:Name="wrpNumbers" Margin="10,60,10,10" Grid.Row="1">
+					<toolkit:WrapPanel.Effect>
+						<DropShadowEffect Opacity="0.5" ShadowDepth="1"/>
+					</toolkit:WrapPanel.Effect>
+				</toolkit:WrapPanel>
+				<Button x:Name="btnRandom" Content="重新開獎" HorizontalAlignment="Center" Grid.Row="3"
+						VerticalAlignment="Center" Margin="0,5,0,10" Padding="10,5" FontSize="16" Click="btnRandom_Click" />
+			</Grid>
+		</Border>
+	</theme:ExpressionDarkTheme>
+</UserControl>

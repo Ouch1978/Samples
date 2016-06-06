@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FakeModalSite", "FakeModalSite\", "{129BAEC3-28BE-4189-8E16-888D64247642}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/FakeModalSite"
+		Debug.AspNetCompiler.PhysicalPath = "FakeModalSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\FakeModalSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/FakeModalSite"
+		Release.AspNetCompiler.PhysicalPath = "FakeModalSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\FakeModalSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "43819"
+		ProjOutputReferences = "{8511b55a-76ce-4ef2-a653-5aa61c518b46}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeModal", "FakeModal\FakeModal.csproj", "{8511B55A-76CE-4EF2-A653-5AA61C518B46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{129BAEC3-28BE-4189-8E16-888D64247642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129BAEC3-28BE-4189-8E16-888D64247642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129BAEC3-28BE-4189-8E16-888D64247642}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{129BAEC3-28BE-4189-8E16-888D64247642}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8511B55A-76CE-4EF2-A653-5AA61C518B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8511B55A-76CE-4EF2-A653-5AA61C518B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8511B55A-76CE-4EF2-A653-5AA61C518B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8511B55A-76CE-4EF2-A653-5AA61C518B46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

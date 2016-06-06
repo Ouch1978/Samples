@@ -1,0 +1,30 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="SL_ReadConfigFile.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="800" d:DesignHeight="600"
+    Width="Auto" Height="Auto" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">Silverlight Reads web.config Demo</TextBlock>
+        <sdk:DataGrid Grid.Row="1" Name="dgdConfigurations">
+        </sdk:DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button Name="btnShowEntry" Width="200" Margin="10,0" Click="btnShowEntry_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center">Read number</TextBlock>
+                    <toolkit:NumericUpDown Name="numericUpDown" Margin="5,0" DecimalPlaces="0"/>
+                    <TextBlock VerticalAlignment="Center">entry</TextBlock></StackPanel>
+            </Button>
+            <Button Name="btnBindConfig" Width="200" Margin="10,0" Click="btnBindConfig_Click">Binding Configurations</Button>
+        </StackPanel>
+       
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="Wpf_KinectSample03.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Image Name="videoImage"></Image>
+        <Canvas Background="Transparent">
+            <Grid Name="grdLeftHand">
+                <Ellipse Fill="Green" Height="40" Width="40" Name="leftHand" Stroke="White" />
+                <TextBlock Text="左手" FontSize="24" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+            </Grid>
+            <Grid Name="grdRightHand">
+                <Ellipse Fill="Red" Height="40" Width="40" Name="rightHand" Stroke="White" />
+                <TextBlock Text="右手" FontSize="24" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+            </Grid >
+            <Grid Name="grdHead">
+                <Ellipse Fill="Yellow" Height="50" Width="50" Name="head" Stroke="White" />
+                <TextBlock Text="頭" FontSize="24" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center"
+                        VerticalAlignment="Center" />
+            </Grid>
+        </Canvas>
+    </Grid>
+</Window>

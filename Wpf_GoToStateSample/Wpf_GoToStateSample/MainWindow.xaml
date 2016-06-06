@@ -1,0 +1,45 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" 
+    xmlns:local="clr-namespace:Wpf_GoToStateSample" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d"
+	x:Class="Wpf_GoToStateSample.MainWindow"
+	x:Name="Window"
+	Title="MainWindow"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="VisualStateGroup" ei:ExtendedVisualStateManager.UseFluidLayout="True">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0:0:1">
+						<ei:ExtendedVisualStateManager.TransitionEffect>
+							<ee:FadeTransitionEffect/>
+						</ei:ExtendedVisualStateManager.TransitionEffect>
+					</VisualTransition>
+				</VisualStateGroup.Transitions>
+				<VisualState x:Name="State1"/>
+				<VisualState x:Name="State2">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="twoStateControl">
+							<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="40"/>
+		</Grid.RowDefinitions>
+		<VisualStateManager.CustomVisualStateManager>
+			<ei:ExtendedVisualStateManager/>
+		</VisualStateManager.CustomVisualStateManager>
+		<Button Content="Change Window State" Grid.Row="1" Click="Button_Click" />
+		<local:TwoStateControl x:Name="twoStateControl" d:LayoutOverrides="Height" Visibility="Collapsed" />
+	</Grid>
+</Window>

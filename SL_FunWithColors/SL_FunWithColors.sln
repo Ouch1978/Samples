@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_FunWithColors", "SL_FunWithColors\SL_FunWithColors.csproj", "{A5F00FA1-E934-457F-A1EA-7C1AAD3FF7F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_FunWithColors.Web", "SL_FunWithColors.Web\SL_FunWithColors.Web.csproj", "{942A04D8-8049-4CF1-8EE7-14448A0BE545}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5F00FA1-E934-457F-A1EA-7C1AAD3FF7F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F00FA1-E934-457F-A1EA-7C1AAD3FF7F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F00FA1-E934-457F-A1EA-7C1AAD3FF7F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F00FA1-E934-457F-A1EA-7C1AAD3FF7F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{942A04D8-8049-4CF1-8EE7-14448A0BE545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942A04D8-8049-4CF1-8EE7-14448A0BE545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942A04D8-8049-4CF1-8EE7-14448A0BE545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942A04D8-8049-4CF1-8EE7-14448A0BE545}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

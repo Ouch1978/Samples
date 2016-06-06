@@ -1,0 +1,18 @@
+﻿<navigation:Page 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Ouch_Silverlight_Behaviors="clr-namespace:Ouch.Silverlight.Behaviors;assembly=Ouch.Silverlight.Behaviors" x:Class="Ouch.Silverlight.Behaviors.Demo.Pages.MagnifierBehaviorDemo"
+           mc:Ignorable="d"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="MagnifierBehaviorDemo Page">
+    <Grid x:Name="LayoutRoot">
+        <Image Source="/Ouch.Silverlight.Behaviors.Demo;component/Images/Image.jpg">
+        	<i:Interaction.Behaviors>
+        		<Ouch_Silverlight_Behaviors:MagnifierBehavior/>
+        	</i:Interaction.Behaviors>
+        </Image>
+    </Grid>
+</navigation:Page>

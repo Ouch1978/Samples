@@ -1,0 +1,54 @@
+﻿<Window x:Class="Wpf_ObjectDataSource.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" mc:Ignorable="d" d:DesignWidth="800"
+		d:DesignHeight="600" Title="MainWindow" Height="Auto" Width="Auto">
+	<Grid>
+		<Border BorderBrush="#FF646464" BorderThickness="2" HorizontalAlignment="Center" Height="300"
+				VerticalAlignment="Center" Width="400" CornerRadius="10" Background="White">
+			<Border.Effect>
+				<DropShadowEffect Opacity="0.5" />
+			</Border.Effect>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="125" />
+					<ColumnDefinition Width="0.646*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+					<RowDefinition Height="0.2*" />
+				</Grid.RowDefinitions>
+				<TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap"
+						VerticalAlignment="Center" Grid.ColumnSpan="2" Text="WPF Multilingual Sample" FontSize="24"
+						Foreground="#FF323232" />
+				<TextBlock x:Name="textBlock3" TextWrapping="Wrap"
+						Text="{Binding Languages, Source={StaticResource Resources}}" HorizontalAlignment="Left"
+						VerticalAlignment="Center" Grid.Row="1" Margin="20,0,0,0" FontSize="16" />
+				<ComboBox x:Name="comboBox" d:LayoutOverrides="Height" Grid.Row="1" Grid.Column="1"
+						VerticalAlignment="Center" Margin="10" FontSize="16"
+						ItemsSource="{Binding SupportedCultures, Source={StaticResource CultureResourcesDS}}"
+						DisplayMemberPath="DisplayName" SelectionChanged="comboBox_SelectionChanged" />
+				<TextBlock x:Name="textBlock2" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"
+						Grid.Row="2" Margin="20,0,0,0" FontSize="16"
+						Text="{Binding UserAccount, Source={StaticResource Resources}}" />
+				<TextBox x:Name="textBox" TextWrapping="Wrap" Grid.Column="1" Grid.Row="2" Margin="10" FontSize="16"
+						VerticalAlignment="Center" />
+				<TextBlock x:Name="textBlock1" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center"
+						Grid.Row="3" Margin="20,0,0,0" FontSize="16"
+						Text="{Binding Password, Source={StaticResource Resources}}" />
+				<TextBox x:Name="textBox1" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="16"
+						VerticalAlignment="Center" />
+				<StackPanel Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+						Orientation="Horizontal">
+					<Button x:Name="button" Content="{Binding Ok, Source={StaticResource Resources}}" Width="75"
+							Margin="10" FontSize="16" />
+					<Button x:Name="button1" Content="{Binding Cancel, Source={StaticResource Resources}}" Width="75"
+							Margin="10" FontSize="16" />
+				</StackPanel>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>

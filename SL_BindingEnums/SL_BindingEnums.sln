@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_BindingEnums", "SL_BindingEnums\SL_BindingEnums.csproj", "{ED4E5BD3-D280-42E6-B062-8C06BC14063C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SL_BindingEnums.Web", "SL_BindingEnums.Web\SL_BindingEnums.Web.csproj", "{AACC38C9-46C1-4665-8F3F-D39273F7B173}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED4E5BD3-D280-42E6-B062-8C06BC14063C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4E5BD3-D280-42E6-B062-8C06BC14063C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4E5BD3-D280-42E6-B062-8C06BC14063C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4E5BD3-D280-42E6-B062-8C06BC14063C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AACC38C9-46C1-4665-8F3F-D39273F7B173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACC38C9-46C1-4665-8F3F-D39273F7B173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACC38C9-46C1-4665-8F3F-D39273F7B173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACC38C9-46C1-4665-8F3F-D39273F7B173}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

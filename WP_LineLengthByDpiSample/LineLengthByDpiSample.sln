@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineLengthByDpiSample", "LineLengthByDpiSample\LineLengthByDpiSample.csproj", "{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenSizeSupport", "ScreenSizeSupport\ScreenSizeSupport.csproj", "{949A23FD-3917-495B-80FB-2465FE68B8A8}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ouch1978.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ScreenSizeSupport\\ScreenSizeSupport.csproj
+		SccProjectName0 = ScreenSizeSupport
+		SccAuxPath0 = https://ouch1978.visualstudio.com/defaultcollection
+		SccLocalPath0 = ScreenSizeSupport
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|ARM.Build.0 = Debug|ARM
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|ARM.Deploy.0 = Debug|ARM
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|x86.ActiveCfg = Debug|x86
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|x86.Build.0 = Debug|x86
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Debug|x86.Deploy.0 = Debug|x86
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|ARM.ActiveCfg = Release|ARM
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|ARM.Build.0 = Release|ARM
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|ARM.Deploy.0 = Release|ARM
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|x86.ActiveCfg = Release|x86
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|x86.Build.0 = Release|x86
+		{8D3055F5-0E44-4B15-9137-CDEC98ADA00A}.Release|x86.Deploy.0 = Release|x86
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Debug|ARM.ActiveCfg = Debug|ARM
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Debug|ARM.Build.0 = Debug|ARM
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Debug|x86.ActiveCfg = Debug|x86
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Debug|x86.Build.0 = Debug|x86
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Release|ARM.ActiveCfg = Release|ARM
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Release|ARM.Build.0 = Release|ARM
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Release|x86.ActiveCfg = Release|x86
+		{949A23FD-3917-495B-80FB-2465FE68B8A8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

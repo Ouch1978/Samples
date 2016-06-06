@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="SilverlightDataBinding.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:local="clr-namespace:SilverlightDataBinding"
+	mc:Ignorable="d"
+	d:DesignWidth="800" d:DesignHeight="600"
+	Width="Auto" Height="Auto">
+	<UserControl.Resources>
+		<local:StringToSolidColorBrushConverter x:Key="StringToSolidColorBrushConverter"/>
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" ShowGridLines="True">
+            <Viewbox HorizontalAlignment="Left">
+                <TextBlock Text="Default" Foreground="#7FB6B6B6"/>
+            </Viewbox>
+            <StackPanel Margin="10,0,10,20" VerticalAlignment="Bottom" Orientation="Horizontal">
+            	<TextBlock TextWrapping="Wrap" Text="Source:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+            	<CheckBox x:Name="chkDefaultSource" Content="DefaultSource" FontSize="18.667" VerticalContentAlignment="Center" Padding="0" IsThreeState="True" Margin="10,0,0,0" Width="240"/>
+            	<TextBlock TextWrapping="Wrap" Text="Target:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+            	<TextBox x:Name="txtDefaultTarget" TextWrapping="Wrap" Text="{Binding IsChecked, ElementName=chkDefaultSource, Mode=TwoWay}" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0" Width="240"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+        	<Viewbox HorizontalAlignment="Left">
+        		<TextBlock Text="OneWay" Foreground="#7FB6B6B6"/>
+        	</Viewbox>
+        	<StackPanel Margin="10,0,10,20" VerticalAlignment="Bottom" Orientation="Horizontal">
+        		<TextBlock TextWrapping="Wrap" Text="Source:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<ComboBox x:Name="comboBox" Width="240" Margin="10,0,0,0">
+        			<ComboBoxItem Content="Option1"/>
+        			<ComboBoxItem Content="Option2"/>
+        			<ComboBoxItem Content="Option3"/>
+        		</ComboBox>
+        		<TextBlock TextWrapping="Wrap" Text="Target:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<TextBox x:Name="txtOneWayTarget" TextWrapping="Wrap" Text="{Binding SelectedItem.Content, ElementName=comboBox, Mode=OneWay}" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0" Width="240"/>
+        	</StackPanel></Grid>
+        <Grid Grid.Row="2">
+        	<Viewbox HorizontalAlignment="Left">
+        		<TextBlock Text="OneTime" Foreground="#7FB6B6B6"/>
+        	</Viewbox>
+        	<StackPanel Margin="10,0,10,20" VerticalAlignment="Bottom" Orientation="Horizontal">
+        		<TextBlock TextWrapping="Wrap" Text="Source:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<TextBox x:Name="txtOneTimeSource" TextWrapping="Wrap" Text="I'm OneTime Source" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0" Width="240"/>
+        		<TextBlock TextWrapping="Wrap" Text="Target:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<TextBox x:Name="txtOneTimeTarget" TextWrapping="Wrap" Text="{Binding Text, ElementName=txtOneTimeSource, Mode=OneTime}" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0" Width="240"/>
+        	</StackPanel></Grid>
+        <Grid Grid.Row="3">
+        	<Viewbox HorizontalAlignment="Left">
+        		<TextBlock Text="TwoWay" Foreground="#7FB6B6B6"/>
+        	</Viewbox>
+        	<StackPanel Margin="10,0,10,20" VerticalAlignment="Bottom" Orientation="Horizontal">
+        		<TextBlock TextWrapping="Wrap" Text="Source:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<Slider x:Name="sldTwoWaySource" Width="240" Margin="10,0,0,0" Maximum="100" SmallChange="1"/>
+        		<TextBlock TextWrapping="Wrap" Text="Target:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<TextBox x:Name="txtTwoWayTarget" TextWrapping="Wrap" Text="{Binding Value, ElementName=sldTwoWaySource, Mode=TwoWay}" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0" Width="240"/>
+        	</StackPanel></Grid>
+        <Grid Grid.Row="4">
+        	<Viewbox HorizontalAlignment="Left">
+        		<TextBlock Text="Converter" Foreground="#7FB6B6B6"/>
+        	</Viewbox>
+        	<StackPanel Margin="10,0,10,20" VerticalAlignment="Bottom" Orientation="Horizontal">
+        		<TextBlock TextWrapping="Wrap" Text="Source:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<ComboBox x:Name="cmbColorSource" Width="240" Margin="10,0,0,0">
+        			<ComboBoxItem Content="FFFF0000" Foreground="Red"/>
+        			<ComboBoxItem Content="FF00FF00" Foreground="Lime"/>
+        			<ComboBoxItem Content="FF0000FF" Foreground="Blue"/>
+        		</ComboBox>
+        		<TextBlock TextWrapping="Wrap" Text="Target:" VerticalAlignment="Center" FontSize="18.667" Margin="10,0,0,0"/>
+        		<Rectangle Fill="{Binding Converter={StaticResource StringToSolidColorBrushConverter}, ElementName=cmbColorSource, Path=SelectedItem.Content, Mode=TwoWay}" Height="36" Stroke="Black" Width="36" Margin="10,0,0,0"/>
+            </StackPanel></Grid>
+    </Grid>
+</UserControl>

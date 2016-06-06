@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="FakeModal.MyModalControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="480"
+             d:DesignWidth="640"
+             mc:Ignorable="d">
+    <Grid x:Name="LayoutRoot"
+          Background="#4C4969CC">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity="0.5" />
+            </StackPanel.Effect>
+            <i:Interaction.Behaviors>
+                <ei:MouseDragElementBehavior ConstrainToParentBounds="True" />
+            </i:Interaction.Behaviors>
+            <Border Width="200"
+                    Height="32"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Background="White"
+                    BorderBrush="Black"
+                    BorderThickness="2,2,2,0"
+                    CornerRadius="10,10,0,0">
+                <TextBlock HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="18.667"
+                           Text="FakeModal"
+                           TextWrapping="Wrap" />
+            </Border>
+            <Border Width="400"
+                    Height="150"
+                    Background="White"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    CornerRadius="10">
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <TextBlock Margin="0"
+                               FontSize="18.667"
+                               Text="Is to make a fake modal that simple?"
+                               TextWrapping="Wrap" />
+                    <StackPanel Margin="0,30,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                        <Button x:Name="btnYes"
+                                Width="80"
+                                Height="32"
+                                Margin="10,0"
+                                Click="btnYes_Click"
+                                Content="Yes"
+                                FontSize="16" />
+                        <Button x:Name="btnNo"
+                                Width="80"
+                                Height="32"
+                                Margin="10,0"
+                                Click="btnNo_Click"
+                                Content="No"
+                                FontSize="16" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

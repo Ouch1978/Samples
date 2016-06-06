@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SL_BindingEnums.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="800">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel VerticalAlignment="Center" Margin="10" >
+            <TextBlock Text="Visibility:"/>
+            <ComboBox Name="cmbVisibility"/>
+            <TextBlock Text="DayOfWeek:"/>
+            <ComboBox Name="cmbDayOfWeek"/>
+        </StackPanel>
+
+        <Canvas Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="100" Background="R"
+                 Visibility="{Binding ElementName=cmbVisibility, Path=SelectedItem}" />
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,50 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" mc:Ignorable="d"
+        x:Class="Wpf_CustomCursor.CustomCursor2" x:Name="UserControl" Width="Auto" Height="Auto"
+        d:DesignWidth="800" d:DesignHeight="600">
+    <UserControl.Resources>
+        <Storyboard x:Key="Storyboard1" AutoReverse="True" RepeatBehavior="Forever">
+            <ColorAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                    Storyboard.TargetName="path">
+                <EasingColorKeyFrame KeyTime="0" Value="Black">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="Red">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="Black">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseInOut" />
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+	<i:Interaction.Triggers>
+		<i:EventTrigger>
+			<ei:ControlStoryboardAction Storyboard="{StaticResource Storyboard1}"/>
+		</i:EventTrigger>
+	</i:Interaction.Triggers>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Width="22" Height="22">
+        <Canvas HorizontalAlignment="Left" Height="19" Margin="-1,-1,0,0" VerticalAlignment="Top"
+                Width="19">
+            <Canvas.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" />
+            </Canvas.Effect>
+            <Rectangle Fill="Black" Height="3" Width="3" />
+            <Path x:Name="path"
+                    Data="M25,4.9999995 C15.058874,5 7,13.058874 7.0000005,23 7,32.941124 15.058874,41 25,41 34.941124,41 43,32.941124 43,23 43,13.058874 34.941124,5 25,4.9999995 z M26,0 C40.359402,0 52,11.640596 52,26 52,40.359402 40.359402,52 26,52 11.640596,52 0,40.359402 0,26 0,11.640596 11.640596,0 26,0 z"
+                    Fill="Black" Height="16" Stretch="Fill" Width="16" Canvas.Left="3"
+                    Canvas.Top="3" />
+        </Canvas>
+    </Grid>
+</UserControl>

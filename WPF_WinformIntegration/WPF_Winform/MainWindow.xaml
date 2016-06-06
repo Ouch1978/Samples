@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPF_Winform.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+             xmlns:WinFormControls="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             mc:Ignorable="d" 
+             Title="MainWindow" 
+             d:DesignWidth="800" d:DesignHeight="600"
+	     Width="Auto" Height="Auto">
+    <Grid Name="LayoutRoot"  Background="Gray">
+        <WinFormHost:WindowsFormsHost Name="winFormHost" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" Width="600">
+            <WinFormControls:Panel Name="floPanel" BackColor="Transparent" Width="600">
+                <WinFormControls:Panel.Controls>
+                    <WinFormControls:Button Text="WinformButton" Width="150" Click="Button_Click" />
+                    <WinFormControls:Label Text="WinformLabel"/>
+                    <WinFormControls:TextBox Width="200"/>
+                    <ElementHost Height="200" Width="200">
+                        <Grid Height="200" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Yellow">
+                            <Button Content="WPF Button" Width="150" Height="40" Click="Button_Click"/>
+                        </Grid>
+                    </ElementHost>
+                </WinFormControls:Panel.Controls>
+            </WinFormControls:Panel>
+        </WinFormHost:WindowsFormsHost>
+        <Grid Background="Black"></Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,13 @@
+﻿<?xml version='1.0'?>
+<Data>
+  <Book>
+    <Author>John Doe</Author>
+    <Title>Straight Track Demo</Title>
+    <Version>1</Version>
+  </Book>
+  <Book>
+    <Author>John Doe</Author>
+    <Title>Straight Track Demo</Title>
+    <Version>2</Version>
+  </Book>
+</Data>

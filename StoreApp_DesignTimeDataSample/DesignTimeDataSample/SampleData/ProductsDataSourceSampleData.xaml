@@ -1,0 +1,114 @@
+﻿<Models:ProductsDataSource xmlns:Models="using:DesignTimeDataSample.Models" xmlns:System="using:System" xmlns:Imaging="using:Windows.UI.Xaml.Media.Imaging">
+	<Models:ProductsDataSource.Products>
+		<Models:Product Description="Amet non dictum per" DiscountBeginTime="12/18/2013 19:25:10" Id="23" ImageUri="Adipiscing maecenas parturient vestibulum cras" IsAvailable="True" Inventory="12" Name="Aliquam integer">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="IgnoreImageCache" DecodePixelHeight="19" DecodePixelWidth="85" DecodePixelType="Logical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Integer habitant fusce lorem" DiscountBeginTime="12/18/2013 19:25:10" Id="62" ImageUri="Donec phasellus" IsAvailable="False" Inventory="32" Name="Quisque curae">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="98" DecodePixelWidth="23" DecodePixelType="Physical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Sed quisque sem morbi" DiscountBeginTime="12/18/2013 19:25:10" Id="82" ImageUri="Dignissim mauris vivamus fusce adipiscing" IsAvailable="True" Inventory="34" Name="Duis sed">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="36" DecodePixelWidth="82" DecodePixelType="Physical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Nulla ante" DiscountBeginTime="12/18/2013 19:25:10" Id="58" ImageUri="Nunc aptent elementum" IsAvailable="False" Inventory="59" Name="Nullam est parturient">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="87" DecodePixelWidth="69" DecodePixelType="Physical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Arcu sit vel" DiscountBeginTime="12/18/2013 19:25:10" Id="91" ImageUri="Aliquam vestibulum adipiscing parturient" IsAvailable="True" Inventory="11" Name="Facilisis auctor hac leo">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="79" DecodePixelWidth="53" DecodePixelType="Physical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Nam inceptos diam" DiscountBeginTime="12/18/2013 19:25:10" Id="39" ImageUri="Mus facilisi" IsAvailable="False" Inventory="28" Name="Fermentum dictumst cursus fringilla eleifend">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="97" DecodePixelWidth="94" DecodePixelType="Logical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Vivamus eget elit sed" DiscountBeginTime="12/18/2013 19:25:10" Id="60" ImageUri="Hendrerit ante arcu" IsAvailable="True" Inventory="94" Name="Libero ligula faucibus">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="IgnoreImageCache" DecodePixelHeight="51" DecodePixelWidth="86" DecodePixelType="Physical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Lectus enim libero" DiscountBeginTime="12/18/2013 19:25:10" Id="16" ImageUri="Inceptos non cubilia diam per" IsAvailable="False" Inventory="28" Name="Himenaeos imperdiet">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="12" DecodePixelWidth="50" DecodePixelType="Logical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Ligula interdum" DiscountBeginTime="12/18/2013 19:25:10" Id="11" ImageUri="Luctus dolor egestas euismod elit" IsAvailable="True" Inventory="60" Name="Dapibus proin adipiscing augue">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="None" DecodePixelHeight="70" DecodePixelWidth="53" DecodePixelType="Logical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+		<Models:Product Description="Aliquam erat lobortis nascetur" DiscountBeginTime="12/18/2013 19:25:10" Id="49" ImageUri="Sem gravida" IsAvailable="False" Inventory="63" Name="Sed vestibulum penatibus">
+			<Models:Product.DiscountedPrice>
+				<System:Decimal/>
+			</Models:Product.DiscountedPrice>
+			<Models:Product.Image>
+				<Imaging:BitmapImage CreateOptions="IgnoreImageCache" DecodePixelHeight="60" DecodePixelWidth="72" DecodePixelType="Physical"/>
+			</Models:Product.Image>
+			<Models:Product.OriginalPrice>
+				<System:Decimal/>
+			</Models:Product.OriginalPrice>
+		</Models:Product>
+	</Models:ProductsDataSource.Products>
+</Models:ProductsDataSource>

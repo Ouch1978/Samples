@@ -1,0 +1,234 @@
+﻿<UserControl x:Class="SL_BindingWithStringFormat.MainPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:Theme="clr-namespace:System.Windows.Controls.Theming;assembly=System.Windows.Controls.Theming.ExpressionDark"
+        xmlns:toolkit="clr-namespace:Microsoft.Windows;assembly=System.Windows.Controls.Toolkit" mc:Ignorable="d" d:DesignHeight="600"
+        d:DesignWidth="700" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Background="White">
+    <Theme:ExpressionDarkTheme Background="{x:Null}">
+        <Border BorderThickness="2" BorderBrush="#FF646464" CornerRadius="10" Background="White" Margin="10">
+        	<Border.Effect>
+        		<DropShadowEffect/>
+        	</Border.Effect>
+            <Grid Margin="2,-2,-2,2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Silverlight StringFormat 範例" FontSize="24" VerticalAlignment="Center"
+                        Margin="5,10" Foreground="#FF646464" FontWeight="Bold" FontFamily="Microsoft JhengHei" />
+                <Rectangle Fill="#FF646464" Height="2" VerticalAlignment="Bottom" Margin="20,0" />
+                <Viewbox Grid.Row="1" Margin="0,10,20,10" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.2" d:IsLocked="True">
+                    <TextBlock TextWrapping="Wrap" Text="一般字串格式" FontSize="21.333" Foreground="#FF646464" FontWeight="Bold" FontStyle="Italic"
+                            FontFamily="Microsoft JhengHei" />
+                </Viewbox>
+                <Viewbox Margin="0,10,20,10" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.2" d:IsLocked="True">
+                    <TextBlock TextWrapping="Wrap" Text="數字格式" FontSize="21.333" Foreground="#FF646464" FontStyle="Italic" FontWeight="Bold"
+                            FontFamily="Microsoft JhengHei" />
+                </Viewbox>
+                <Viewbox Grid.Row="3" Margin="0,10,20,10" HorizontalAlignment="Right" VerticalAlignment="Center" Opacity="0.2" d:IsLocked="True">
+                    <TextBlock TextWrapping="Wrap" Text="日期格式" FontSize="21.333" Foreground="#FF646464" FontStyle="Italic" FontWeight="Bold"
+                            FontFamily="Microsoft JhengHei" />
+                </Viewbox>
+                <Grid Grid.Row="1" Margin="20,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.ColumnSpan="10" Margin="0,0,0,20" d:LayoutOverrides="GridBox">
+                        <TextBlock TextWrapping="Wrap" Text="請在文字方塊中輸入文字：" VerticalAlignment="Center" FontFamily="Microsoft JhengHei" FontSize="16"
+                                Foreground="Black" />
+                        <TextBox x:Name="txtTextBox1" TextWrapping="Wrap" VerticalAlignment="Center" MinWidth="250" FontFamily="Microsoft JhengHei"
+                                FontSize="14.667" Background="#7F323232" Text="我是範例" />
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="說明" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="加入特定文字" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="左右加上括弧" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="左邊加上空白" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="右邊加上空白" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="2" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="StringFormat" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="您輸入的是：&quot;{0}&quot;" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="({0})" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="{}{0,15}" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="{}{0,-15}" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="3" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="結果" Foreground="Black" />
+                    <Border Grid.Column="1" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Text, ElementName=txtTextBox1, StringFormat=您輸入的是：\&quot;\{0\}\&quot;}"
+                    		Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="2" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Text, ElementName=txtTextBox1, StringFormat=(\{0\})}" Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="3" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Text, ElementName=txtTextBox1, StringFormat=\{0\,15\}}" Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="4" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Text, ElementName=txtTextBox1, StringFormat=\{0\,-15\}}" Foreground="Black" />
+                    </Border>
+                </Grid>
+                <Rectangle Fill="#FF646464" Height="2" VerticalAlignment="Bottom" Margin="20,0" Grid.Row="1" Opacity="0.5" />
+                <Grid Grid.Row="2" Margin="10" d:IsLocked="True" />
+                <Rectangle Fill="#FF646464" Height="2" VerticalAlignment="Bottom" Margin="20,0" Grid.Row="2" Opacity="0.5" />
+                <Grid Grid.Row="3" Margin="10,10,10,0" d:IsLocked="True" Height="116" VerticalAlignment="Top" />
+                <Grid Grid.Row="3" Margin="10,0,10,10" d:IsLocked="True" Height="116" VerticalAlignment="Bottom" />
+                <Grid Grid.Row="2" Margin="20,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" d:LayoutOverrides="GridBox" Grid.ColumnSpan="10">
+                        <TextBlock TextWrapping="Wrap" Text="請移動滑桿：" VerticalAlignment="Center" FontFamily="Microsoft JhengHei" FontSize="16"
+                                Foreground="Black" />
+                        <Slider x:Name="sldSlider2" VerticalAlignment="Center" MinWidth="300" Minimum="-10" Maximum="10" Value="3.2" />
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="說明" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="以貨幣格式顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="以百分比顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="使用自訂格式" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="使用無小數點的百分比顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="2" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="StringFormat" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="C" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="P" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="00.00" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="P0" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="3" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="結果" Foreground="Black" />
+                    <Border Grid.Column="1" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap" Language="zh-TW"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Value, ElementName=sldSlider2, StringFormat=C}" Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="2" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Value, ElementName=sldSlider2, StringFormat=P}" Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="3" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Value, ElementName=sldSlider2, StringFormat=00.00}" Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="4" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding Value, ElementName=sldSlider2, StringFormat=P0}" Foreground="Black" />
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="3" Margin="20,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" d:LayoutOverrides="GridBox" Grid.ColumnSpan="10">
+                        <TextBlock TextWrapping="Wrap" Text="請選擇日期：" VerticalAlignment="Center" FontFamily="Microsoft JhengHei" FontSize="16"
+                                Foreground="Black" />
+                        <sdk:DatePicker Name="dtDatePicker1" VerticalAlignment="Center" MinWidth="200" Padding="10,3,0,0" />
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="1" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="說明" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="以月(文字) 日, 年 西元 顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="以預設長時間格式顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="以年/月/日顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="以月,年顯示" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="2" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="StringFormat" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="MMMM dd, yyyy g" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="G" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="3" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="yyyy/MM/dd" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            FontFamily="Microsoft JhengHei" Text="Y" Foreground="Black" />
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="3" HorizontalAlignment="Right" FontFamily="Microsoft JhengHei"
+                            Text="結果" Foreground="Black" />
+                    <Border Grid.Column="1" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap" Language="zh-TW"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding SelectedDate, ElementName=dtDatePicker1}"
+                    		Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="2" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding SelectedDate, ElementName=dtDatePicker1, StringFormat=G}"
+                    		Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="3" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding SelectedDate, ElementName=dtDatePicker1, StringFormat=yyyy/MM/dd}"
+                    		Foreground="Black" />
+                    </Border>
+                    <Border Grid.Column="4" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Background="#7FFFFF00" CornerRadius="3" Padding="3"
+                            >
+                    	<TextBlock TextWrapping="Wrap" Language="zh-TW"
+                    		FontFamily="Microsoft JhengHei" Text="{Binding SelectedDate, ElementName=dtDatePicker1, StringFormat=Y}"
+                    		Foreground="Black" />
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+    </Theme:ExpressionDarkTheme>
+</UserControl>

@@ -1,0 +1,11 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="SL_SharedStoryboard.App"
+             >
+    <Application.Resources>
+            <Storyboard x:Name="moveBallStoryboard" AutoReverse="False">
+			    <DoubleAnimation Duration="0:0:2" To="200" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"/>
+			    <DoubleAnimation Duration="0:0:2" To="360" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)"/>
+            </Storyboard>
+    </Application.Resources>
+</Application>

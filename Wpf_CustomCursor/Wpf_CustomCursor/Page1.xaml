@@ -1,0 +1,39 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Wpf_CustomCursor" x:Class="Wpf_CustomCursor.Page1" 
+      mc:Ignorable="d" 
+      Title="Page1"
+      d:DesignWidth="800" d:DesignHeight="600"
+      ShowsNavigationUI="False"
+      Width="Auto" Height="Auto">
+    <Border BorderThickness="2" CornerRadius="10" BorderBrush="#FF323232">
+		<UniformGrid x:Name="LayoutRoot">
+			<Button x:Name="btnChangeCursor1" Margin="10" FontSize="16" FontWeight="Bold" Click="btnChangeCursor1_Click">
+				<StackPanel Orientation="Horizontal">
+					<local:CustomCursor1 VerticalAlignment="Center"/>
+					<TextBlock TextWrapping="Wrap" Text="CustomCursor1" Margin="10,0,0,0"/>
+				</StackPanel>
+			</Button>
+			<Button x:Name="btnChangeCursor2" Margin="10" FontSize="16" FontWeight="Bold" Click="btnChangeCursor2_Click">
+				<StackPanel Orientation="Horizontal">
+					<local:CustomCursor2 VerticalAlignment="Center"/>
+					<TextBlock TextWrapping="Wrap" Text="CustomCursor2" Margin="10,0,0,0"/>
+				</StackPanel>
+			</Button>
+			<Button x:Name="btnChangeCursor3" Margin="10" FontSize="16" FontWeight="Bold" Click="btnChangeCursor3_Click">
+				<StackPanel Orientation="Horizontal">
+					<local:CustomCursor3 VerticalAlignment="Center"/>
+					<TextBlock TextWrapping="Wrap" Text="CustomCursor3" Margin="10,0,0,0"/>
+				</StackPanel>
+			</Button>
+			<Button x:Name="btnResetCursor" Margin="10" FontSize="16" FontWeight="Bold" Click="btnResetCursor_Click">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock TextWrapping="Wrap" Text="ResetCursor" Margin="10,0,0,0"/>
+				</StackPanel>
+			</Button>
+		</UniformGrid>
+	</Border>
+</Page>

@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SilverlightPinControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="800" d:DesignHeight="600"
+	Width="Auto" Height="Auto">
+	<UserControl.Resources>
+		<Style x:Key="PinStyle" TargetType="CheckBox">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="CheckBox">
+						<Grid Width="20" Height="24" RenderTransformOrigin="0.5,0.5">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="Disabled"/>
+									<VisualState x:Name="Pressed"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="CheckStates">
+									<VisualStateGroup.Transitions>
+										<VisualTransition GeneratedDuration="0"/>
+									</VisualStateGroup.Transitions>
+									<VisualState x:Name="Checked">
+										<Storyboard>
+											<DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="path" d:IsOptimized="True"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Unchecked">
+										<Storyboard>
+											<DoubleAnimation Duration="0:0:0.2" To="90" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="path" d:IsOptimized="True"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Indeterminate"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Path x:Name="path" Data="M3,0 L57,0 C58.656853,0 60,1.3431458 60,3 L60,7 C60,8.6568546 58.656853,10 57,10 L49.825638,10 L49.865128,10.107891 C49.952782,10.389709 50,10.68934 50,11 L50,45 C50,46.656853 48.656853,48 47,48 L34.825638,48 L34.865128,48.107891 C34.952782,48.389709 35,48.689339 35,49 L35,63 C35,64.656853 33.656853,66 32,66 L28,66 C26.343145,66 25,64.656853 25,63 L25,49 C25,48.689339 25.04722,48.389709 25.134872,48.107891 L25.174362,48 L13,48 C11.343145,48 10,46.656853 10,45 L10,11 C10,10.68934 10.04722,10.389709 10.134874,10.107891 L10.174363,10 L3,10 C1.3431454,10 0,8.6568546 0,7 L0,3 C0,1.3431458 1.3431454,0 3,0 z" Fill="#FF919191" Stretch="Fill" StrokeThickness="0" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5">
+								<Path.RenderTransform>
+									<CompositeTransform Rotation="90"/>
+								</Path.RenderTransform>
+							</Path>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Width="Auto" Height="Auto">
+    	<CheckBox Content="CheckBox" Margin="0" Style="{StaticResource PinStyle}" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTipService.ToolTip="其實我是CheckBox的啦!!"/>
+    </Grid>
+</UserControl>

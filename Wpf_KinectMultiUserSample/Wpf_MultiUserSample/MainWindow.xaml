@@ -1,0 +1,37 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:SoulSolutions_Kinect_Controls_Skeleton="clr-namespace:SoulSolutions.Kinect.Controls.Skeleton;assembly=SoulSolutions.Kinect.Controls.Skeleton"
+		x:Class="Wpf_MultiUserSample.MainWindow" Title="MainWindow" Height="600" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.486*" />
+			<ColumnDefinition Width="0.5*" />
+		</Grid.ColumnDefinitions>
+		<Image x:Name="videoImage" Grid.ColumnSpan="2" />
+		<Border Margin="10" VerticalAlignment="Bottom" Background="#BF000000" Width="320" Height="240">
+			<Viewbox Height="274.826">
+				<SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl x:Name="skeletonPlayer1">
+					<SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl.Foreground>
+						<LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+							<GradientStop Color="Black" />
+							<GradientStop Color="Red" Offset="1" />
+						</LinearGradientBrush>
+					</SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl.Foreground>
+				</SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl>
+			</Viewbox>
+		</Border>
+		<Border Margin="10,0,10,10" VerticalAlignment="Bottom" Background="#BF000000" Grid.Column="1" Width="320"
+				Height="240">
+			<Viewbox Height="274.826">
+				<SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl x:Name="skeletonPlayer2">
+					<SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl.Foreground>
+						<LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+							<GradientStop Color="Black" />
+							<GradientStop Color="#FF0027FF" Offset="1" />
+						</LinearGradientBrush>
+					</SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl.Foreground>
+				</SoulSolutions_Kinect_Controls_Skeleton:SkeletonControl>
+			</Viewbox>
+		</Border>
+	</Grid>
+</Window>

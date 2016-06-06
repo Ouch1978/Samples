@@ -1,0 +1,62 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:theme="clr-namespace:System.Windows.Controls.Theming;assembly=System.Windows.Controls.Theming.ExpressionDark"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+	x:Class="SL_BackgroundAndHitTest.MainPage"
+    mc:Ignorable="d"
+    Width="Auto" Height="Auto"
+    d:DesignWidth="800" d:DesignHeight="600">
+    <theme:ExpressionDarkTheme>
+    	<Grid x:Name="LayoutRoot" Background="Transparent">
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="0.5*"/>
+    			<ColumnDefinition Width="0.5*"/>
+    		</Grid.ColumnDefinitions>
+    		<Grid.RowDefinitions>
+    			<RowDefinition Height="30"/>
+    			<RowDefinition Height="0.933*"/>
+    			<RowDefinition Height="0.067*"/>
+    		</Grid.RowDefinitions>
+    		<TextBlock TextWrapping="Wrap" Text="預設的Grid" FontSize="16" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    		<TextBlock TextWrapping="Wrap" Text="背景色設為透明的Grid" Grid.Column="1" Margin="0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    		<Border Margin="10" Grid.Row="1" BorderThickness="1" BorderBrush="White">
+    			<Grid x:Name="gridNormal">
+    				<i:Interaction.Triggers>
+    					<i:EventTrigger EventName="MouseEnter">
+    						<ei:ChangePropertyAction TargetName="txtMouseEnter1" PropertyName="Opacity" Value="1"/>
+    					</i:EventTrigger>
+    				</i:Interaction.Triggers>
+    				<TextBlock x:Name="txtMouseEnter1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="偵測到MouseEnter事件" VerticalAlignment="Center" FontSize="16" Opacity="0"/>
+    			</Grid>
+    		</Border>
+    		<Border Grid.Column="1" Margin="10" Grid.Row="1" BorderBrush="White" BorderThickness="1" >
+    			<Grid x:Name="gridColored" Background="Transparent">
+    				<i:Interaction.Triggers>
+    					<i:EventTrigger EventName="MouseEnter">
+    						<ei:ChangePropertyAction TargetName="txtMouseEnter2" PropertyName="Opacity" Value="1"/>
+    					</i:EventTrigger>
+    				</i:Interaction.Triggers>
+    				<TextBlock x:Name="txtMouseEnter2" TextWrapping="Wrap" Text="偵測到MouseEnter事件" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Opacity="0"/>
+    			</Grid>
+    		</Border>
+    		<Button Content="重設" HorizontalAlignment="Center" Margin="0" Grid.Row="2" Width="92" VerticalAlignment="Center">
+    			<i:Interaction.Triggers>
+    				<i:EventTrigger EventName="Click">
+    					<ei:ChangePropertyAction TargetName="txtMouseEnter1" PropertyName="Opacity" Value="0.25"/>
+    				</i:EventTrigger>
+    			</i:Interaction.Triggers>
+    		</Button>
+    		<Button Content="重設" HorizontalAlignment="Center" Margin="0" Grid.Row="2" Width="92" VerticalAlignment="Center" Grid.Column="1">
+    			<i:Interaction.Triggers>
+    				<i:EventTrigger EventName="Click">
+    					<ei:ChangePropertyAction TargetName="txtMouseEnter2" PropertyName="Opacity" Value="0.25"/>
+    				</i:EventTrigger>
+    			</i:Interaction.Triggers>
+    		</Button>
+    	</Grid>
+    </theme:ExpressionDarkTheme>
+</UserControl>

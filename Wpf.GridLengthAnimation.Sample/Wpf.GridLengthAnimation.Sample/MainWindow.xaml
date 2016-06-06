@@ -1,0 +1,34 @@
+﻿<Window x:Class="Wpf.GridLengthAnimation.Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Wpf.GridLengthAnimation.Sample"
+        mc:Ignorable="d" 
+        Title="MainWindow" 
+        d:DesignWidth="800" d:DesignHeight="600"
+	    Width="Auto" Height="Auto">
+    <Window.Resources>
+        <Storyboard x:Key="showColumn" Duration="0:0:1" Storyboard.TargetName="column1" Storyboard.TargetProperty="Width" Completed="Storyboard_Completed">
+            <local:GridLengthAnimation From="0" To="300">
+                <local:GridLengthAnimation.EasingFunction>
+                    <BounceEase EasingMode="EaseOut"/>
+                </local:GridLengthAnimation.EasingFunction>
+            </local:GridLengthAnimation>
+        </Storyboard>
+        <Storyboard x:Key="hideColumn" Duration="0:0:1" Storyboard.TargetName="column1" Storyboard.TargetProperty="Width" Completed="Storyboard_Completed">
+            <local:GridLengthAnimation From="300" To="0">
+                <local:GridLengthAnimation.EasingFunction>
+                    <BounceEase EasingMode="EaseOut"/>
+                </local:GridLengthAnimation.EasingFunction>
+            </local:GridLengthAnimation>
+        </Storyboard>
+    </Window.Resources>
+    <Grid Name="LayoutRoot" ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" x:Name="column1"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="1" Name="btnShowHideCol" Content="Hide Column" Click="btnShowHideCol_Click"/>
+    </Grid>
+</Window>
