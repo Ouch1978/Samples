@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -45,14 +46,14 @@ namespace HtmlToMdExporter
 
         }
 
-        void MainWindow_SourceInitialized( object sender, System.EventArgs e )
+        void MainWindow_SourceInitialized( object sender , System.EventArgs e )
         {
             hwndSource = PresentationSource.FromVisual( (Visual) sender ) as HwndSource;
             hwndSource.AddHook( new HwndSourceHook( WndProc ) );
         }
 
 
-        private IntPtr WndProc( IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled )
+        private IntPtr WndProc( IntPtr hwnd , int msg , IntPtr wParam , IntPtr lParam , ref bool handled )
         {
             Debug.WriteLine( "WndProc messages: " + msg.ToString() );
 
@@ -76,15 +77,15 @@ namespace HtmlToMdExporter
             BottomRight = 8,
         }
 
-        [DllImport( "user32.dll", CharSet = CharSet.Auto )]
-        private static extern IntPtr SendMessage( IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam );
+        [DllImport( "user32.dll" , CharSet = CharSet.Auto )]
+        private static extern IntPtr SendMessage( IntPtr hWnd , uint Msg , IntPtr wParam , IntPtr lParam );
 
         private void ResizeWindow( ResizeDirection direction )
         {
-            SendMessage( hwndSource.Handle, WM_SYSCOMMAND, (IntPtr) ( 61440 + direction ), IntPtr.Zero );
+            SendMessage( hwndSource.Handle , WM_SYSCOMMAND , (IntPtr) ( 61440 + direction ) , IntPtr.Zero );
         }
 
-        private void ResetCursor( object sender, MouseEventArgs e )
+        private void ResetCursor( object sender , MouseEventArgs e )
         {
             if( Mouse.LeftButton != MouseButtonState.Pressed )
             {
@@ -92,27 +93,27 @@ namespace HtmlToMdExporter
             }
         }
 
-        private void bdrWindowTitle_MouseLeftButtonDown( object sender, MouseButtonEventArgs e )
+        private void bdrWindowTitle_MouseLeftButtonDown( object sender , MouseButtonEventArgs e )
         {
             this.DragMove();
         }
 
-        private void btnClose_Click( object sender, RoutedEventArgs e )
+        private void btnClose_Click( object sender , RoutedEventArgs e )
         {
             this.Close();
         }
 
-        private void btnMaximize_Click( object sender, RoutedEventArgs e )
+        private void btnMaximize_Click( object sender , RoutedEventArgs e )
         {
             this.WindowState = ( this.WindowState != WindowState.Maximized ) ? WindowState.Maximized : WindowState.Normal;
         }
 
-        private void btnMinimize_Click( object sender, RoutedEventArgs e )
+        private void btnMinimize_Click( object sender , RoutedEventArgs e )
         {
             this.WindowState = WindowState.Minimized;
         }
 
-        private void thumb_PreviewMouseLeftButtonDown( object sender, MouseButtonEventArgs e )
+        private void thumb_PreviewMouseLeftButtonDown( object sender , MouseButtonEventArgs e )
         {
             Thumb thumb = sender as Thumb;
 
@@ -148,9 +149,20 @@ namespace HtmlToMdExporter
 
         }
 
-        private async void btnGo_Click( object sender, RoutedEventArgs e )
+        private async void btnGo_Click( object sender , RoutedEventArgs e )
         {
             this.btnGo.IsEnabled = false;
+
+            if( OutputPath.EndsWith( "\\" ) != true )
+            {
+                OutputPath = $"{OutputPath}\\";
+            }
+
+            if( Directory.Exists( OutputPath ) != true )
+            {
+                Directory.CreateDirectory( OutputPath );
+            }
+
             _httpClient = new HttpClient();
 
             var response = await _httpClient.GetAsync( $"{BaseUrl}/{UserName}/{CurrentPage}" );
@@ -180,7 +192,7 @@ namespace HtmlToMdExporter
 
                     var postName = postLink.InnerHtml;
 
-                    SavePostAsMdFile( postUrl, postName );
+                    SavePostAsMdFile( postUrl , postName );
                 }
 
                 txtCurrentPage.Text = ( ++CurrentPage ).ToString();
@@ -199,7 +211,7 @@ namespace HtmlToMdExporter
             this.btnGo.IsEnabled = true;
         }
 
-        private async void SavePostAsMdFile( string postUrl, string postName )
+        private async void SavePostAsMdFile( string postUrl , string postName )
         {
             try
             {
@@ -230,7 +242,7 @@ namespace HtmlToMdExporter
 
                     var markdown = converter.Convert( html );
 
-                    System.IO.File.WriteAllText( $"{OutputPath}{fileName}", markdown );
+                    File.WriteAllText( $"{OutputPath}{fileName}" , markdown );
 
                 }
             }
@@ -239,5 +251,6 @@ namespace HtmlToMdExporter
                 // ignored
             }
         }
+
     }
 }
